@@ -5,10 +5,9 @@
 
 // Read File
 
-const fs = require('fs');
-const http = require('http');
-const url = require('url');
-
+const fs = require("fs");
+const http = require("http");
+const url = require("url");
 
 ////////// FILE //////////
 
@@ -33,27 +32,24 @@ const url = require('url');
 //   });
 // });
 
-
 ////////////////////
 
 // SERVER
 
-const server = http.createServer((req, res) => {
-    const pathName = req.url ;
-    console.log(req.url)
+const data = fs.readFileSync("./dev-data/data.json", "utf-8");
+const dataObj = JSON.parse(data);
 
-if(pathName === '/' || pathName === '/api') {
-    fs.readFile('./dev-data/data.json', 'utf-8' , (err,data) => {
-        const proData = JSON.parse(data);
-        res.writeHead(200, { 'Content-type' : 'application/json'})
-        res.end(data);
-      })
-} else {
-    res.end('Hello From the server!')
-}
-   
+const server = http.createServer((req, res) => {
+  const pathName = req.url;
+  console.log(req.url);
+
+  if (pathName === "/" || pathName === "/api") {
+    res.end(data);
+  } else {
+    res.end("No Json Data!");
+  }
 });
 
-server.listen(8000,'127.0.0.1', () => {
-    console.log('Listening to requests on port 8000');
+server.listen(8000, "127.0.0.1", () => {
+  console.log("Listening to requests on port 8000");
 });

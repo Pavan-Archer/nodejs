@@ -8,15 +8,15 @@
   }, {
     "id": 2,
     "first_name": "Nirmala",
-    "last_name": "Frediani",
+    "last_name": "Manjunath",
     "email": "nirmalamanju1970@gmail.com",
     "gender": "Female",
     "ip_address": "229.179.4.212"
   },  {
     "id": 3,
-    "first_name": "Ambika",
+    "first_name": "Shon",
     "last_name": "Pavan",
-    "email": "ambikapavan@gmail.com",
+    "email": "shon@gmail.com",
     "gender": "Female",
     "ip_address": "67.76.188.26"
   }]
